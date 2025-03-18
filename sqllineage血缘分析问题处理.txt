@@ -1,0 +1,11 @@
+
+## 代码方言切换
+增加 -d 参数指定，如: sqllineage -d sparksql
+
+
+## UnicodeDecodeError: 'gbk' codec can't decode byte 0xaa in position 50: illegal multibyte sequence
+原因：python默认不支持UTF-8编码，需要手工增加（3.7+）环境变量 PYTHONUTF8 
+解决方法：增加环境变量 PYTHONUTF8 值为1
+	https://github.com/reata/sqllineage/issues/482
+	https://docs.python.org/3/using/cmdline.html#envvar-PYTHONUTF8
+
